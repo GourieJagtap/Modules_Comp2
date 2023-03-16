@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Grid, Paper, Typography} from "@mui/material"
+import SlideCard from './Components/SlideCard';
+import NewsBottom from './Components/NewsBottom';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import images from "./Images"
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Grid container justifyContent={"center"} sx={{p:10,bgcolor:"#F2F2F2"}} >
+      <Grid item xs={12} sx={{justifyContent:"center",pb:5,px:5}}>
+          <Typography sx={{fontWeight:"700"}} variant="h3" >Title:Lorem ipsum dolor sit amet, consectetur </Typography>
+          <Typography sx={{fontWeight:"500"}} variant="h5" >SubTitle:Lorem ipsum dolor sit amet, consectetur"</Typography>
+      </Grid>
+      <Grid item xs={12} component={Paper} p={4} >
+        <Grid item xs={12} sx={{px:"70px"}} >
+            <SlideCard images={images}/>
+        </Grid>
+        <Grid item xs={12} sx={{px:"10px",py:"30px"}}>
+            <NewsBottom/>
+        </Grid>
+        </Grid>
+    </Grid>
+  )
 }
 
-export default App;
+export default App
